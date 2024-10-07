@@ -1,7 +1,7 @@
-Download and install `Docker`
+# Download and install `Docker`
 - [Download Docker](https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)
 - Follow the Instruction to install if you need help
-Join the Discord - [Fnbubbles420 Org Community](https://www.discord.fnbubbles420.org/invite)
+### Join the Discord - [Fnbubbles420 Org Community](https://www.discord.fnbubbles420.org/invite)
 
 ## 1. Create the Project Files
 - a. Create a Folder for Your Project:
