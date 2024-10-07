@@ -1,0 +1,116 @@
+## 1. Create the Project Files
+- a. Create a Folder for Your Project:
+Open your terminal or command prompt and create a directory:
+```
+mkdir docker-simple-app
+cd docker-simple-app
+```
+
+- b. Create `app.js:`
+Inside the `docker-simple-app` folder, create the `app.js` file. This will be your Node.js web server.
+
+`app.js` content:
+```
+const http = require('http');
+const port = 3000;
+
+const requestHandler = (req, res) => {
+  res.end('Hello, World from Docker!');
+};
+
+const server = http.createServer(requestHandler);
+
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+```
+
+- c. Create `package.json:`
+Inside the same folder, create a `package.json` file. This will describe your app and its dependencies.
+
+`package.json` content:
+```
+{
+  "name": "docker-simple-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "http": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
+```
+
+## 2. Create the `Dockerfile`
+Inside the `docker-simple-app` folder, create a file named `Dockerfile`. This file tells Docker how to build the image.
+
+`Dockerfile` content:
+```
+# Use the official Node.js image from Docker Hub
+FROM node:20
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the package.json and install dependencies
+COPY package.json ./
+RUN npm install
+
+# Copy the rest of the application files
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the app
+CMD ["npm", "start"]
+```
+
+## 3. Build the Docker Image
+After creating your project files, open your terminal or command prompt in the docker-simple-app folder and run the following command to build the Docker image:
+```
+docker build -t simple-node-app .
+```
+- `-t simple-node-app`: This tags the image with the name `simple-node-app`.
+- `.`: This tells Docker to use the Dockerfile in the current directory.
+
+## 4. Run the Docker Container
+Once the image is built, you can run the container using:
+```
+docker run -p 3000:3000 simple-node-app
+```
+- `-p 3000:3000:` This maps port 3000 on your local machine to port 3000 in the Docker container.
+
+## 5. Access the Application
+Open your browser and go to:
+```
+http://localhost:3000
+```
+
+- You should see the message:
+```
+Hello, World from Docker!
+```
+
+## 6. Stop the Container
+To stop the running container, press `CTRL + C` in the terminal where the container is running.
+
+
+### List of running Docker Containers
+
+```
+docker ps
+```
+
+```
+docker stop <container_id_or_name>
+```
+
+then do this commmand again to check:
+```
+docker ps
+```
+
+
