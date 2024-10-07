@@ -1,3 +1,5 @@
+
+
 # This is a Example on how to use Docker for Beginners
 
 ## Download and install `Docker`
@@ -55,23 +57,23 @@ Inside the `docker-simple-app` folder, create a file named `Dockerfile`. This fi
 
 `Dockerfile` content:
 ```
-# Use the official Node.js image from Docker Hub
-FROM node:20
+# Use the official Node.js LTS image based on Alpine (smaller and minimal)
+FROM node:lts-alpine
 
-# Set the working directory inside the container
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and install dependencies
-COPY package.json ./
-RUN npm install
+# Copy package.json and package-lock.json and install dependencies
+COPY package.json package-lock.json ./
+RUN npm install --production
 
 # Copy the rest of the application files
 COPY . .
 
-# Expose the port the app runs on
+# Expose the app port
 EXPOSE 3000
 
-# Command to run the app
+# Command to start the app
 CMD ["npm", "start"]
 ```
 
@@ -119,5 +121,3 @@ then do this commmand again to check:
 ```
 docker ps
 ```
-
-
