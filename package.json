@@ -1,12 +1,12 @@
 {
-    "name": "docker-simple-app",
-    "version": "1.0.0",
-    "main": "app.js",
-    "dependencies": {
-      "http": "*"
-    },
-    "scripts": {
-      "start": "node app.js"
+  "name": "docker-simple-app",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "docker-simple-app",
+      "version": "1.0.0"
     }
   }
-  
+}
