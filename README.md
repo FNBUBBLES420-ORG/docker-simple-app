@@ -111,7 +111,7 @@ To stop the running container, press `CTRL + C` in the terminal where the contai
 ### List of running Docker Containers
 
 ```
-docker ps
+docker ps -a
 ```
 
 ```
@@ -120,5 +120,5 @@ docker stop <container_id_or_name>
 
 then do this commmand again to check:
 ```
-docker ps
+docker ps -a
 ```
