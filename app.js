@@ -1,12 +1,12 @@
-const http = require('http');
-const port = 3000;
+// app.js
+const express = require('express');
+const app = express();
+const port = 9090;
 
-const requestHandler = (req, res) => {
-  res.end('Hello, World from Docker!');
-};
+app.get('/', (req, res) => {
+  res.send('Hello, World! from bubblesthedev');
+});
 
-const server = http.createServer(requestHandler);
-
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
