@@ -8,5 +8,17 @@
       "name": "docker-simple-app",
       "version": "1.0.0"
     }
+  },
+  "description": "## Download and install `Docker` - **[Download Docker- arm64](https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)** - **[Download_Docker- amd64](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)** - **Follow the Instruction to install `Docker Desktop App` if you need help** ### Join the Discord - [Fnbubbles420 Org Community](https://www.discord.fnbubbles420.org/invite)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "bubblesthedev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
   }
 }
