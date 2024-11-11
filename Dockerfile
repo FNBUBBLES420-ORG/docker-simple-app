@@ -1,5 +1,8 @@
-# Use the official Node.js LTS image based on Alpine (smaller and minimal)
+# Use the official Node.js LTS image based on Alpine
 FROM node:lts-alpine
+
+# Update apk and explicitly install OpenSSL
+RUN apk update && apk add --no-cache openssl
 
 # Set working directory inside the container
 WORKDIR /app
@@ -12,7 +15,7 @@ RUN npm install --production
 COPY . .
 
 # Expose the app port
-EXPOSE 3000
+EXPOSE 9090
 
 # Command to start the app
 CMD ["npm", "start"]
