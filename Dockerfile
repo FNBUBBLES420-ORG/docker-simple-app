@@ -1,15 +1,20 @@
 # Use the official Node.js LTS image based on Alpine
 FROM node:lts-alpine
 
-# Update apk and explicitly install OpenSSL
-RUN apk update && apk add --no-cache openssl
+# Set environment variables for production
+ENV NODE_ENV=production
+
+# Update apk and explicitly install OpenSSL and other necessary dependencies
+RUN apk update && apk add --no-cache openssl bash
 
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json and install dependencies
+# Copy package.json and package-lock.json first to leverage Docker cache
 COPY package.json package-lock.json ./
-RUN npm install --production
+
+# Install dependencies securely
+RUN npm ci --only=production
 
 # Copy the rest of the application files
 COPY . .
