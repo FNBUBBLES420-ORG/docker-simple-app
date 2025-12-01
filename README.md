@@ -5,7 +5,10 @@
 - **[Download Docker - amd64](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)**
 - **Follow the instructions to install `Docker Desktop App` if you need help**
 
-### Join the Discord - [Fnbubbles420 Org Community](https://www.discord.fnbubbles420.org/invite)
+# Join the discord if you need help 
+
+[https://fnbubbles420.org/discordinvite](https://fnbubbles420.org/discordinvite)
+
 
 ## 1. Create the Project Files
 
